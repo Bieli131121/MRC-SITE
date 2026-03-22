@@ -1,0 +1,78 @@
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5%;
+  height: 72px;
+  background: rgba(10,10,10,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(201,151,58,0.2);
+  transition: height 0.3s;
+}
+.scrolled { height: 60px; }
+
+.logo {
+  display: flex; align-items: center; gap: 12px;
+  text-decoration: none;
+}
+.logoIcon { width: 40px; height: 40px; }
+.logoText {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.3rem; font-weight: 700;
+  letter-spacing: 0.08em; color: var(--white);
+}
+.logoText span { color: var(--gold); }
+
+.links {
+  display: flex; gap: 36px; list-style: none;
+}
+.links a {
+  font-size: 0.82rem; font-weight: 500; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--silver);
+  text-decoration: none; transition: color 0.2s;
+}
+.links a:hover { color: var(--gold-light); }
+
+.cta {
+  background: var(--gold); color: var(--black);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.85rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; border: none; cursor: pointer;
+  padding: 10px 24px;
+  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  transition: background 0.2s, transform 0.15s;
+}
+.cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+.mobileBtn {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 8px;
+}
+.mobileBtn span {
+  display: block; width: 24px; height: 2px; background: var(--gold);
+  transition: all 0.3s;
+}
+
+.mobileMenu {
+  position: fixed; top: 60px; left: 0; right: 0; z-index: 99;
+  background: var(--black-2);
+  border-bottom: 1px solid rgba(201,151,58,0.2);
+  display: flex; flex-direction: column; gap: 0;
+  padding: 16px 5% 24px;
+}
+.mobileMenu a {
+  padding: 14px 0;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1rem; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--silver);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  transition: color 0.2s;
+}
+.mobileMenu a:hover { color: var(--gold); }
+.mobileMenu .cta { margin-top: 16px; width: 100%; justify-content: center; }
+
+@media (max-width: 900px) {
+  .links { display: none; }
+  .cta { display: none; }
+  .mobileBtn { display: flex; }
+}

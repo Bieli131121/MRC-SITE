@@ -1,0 +1,51 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2px;
+  margin-top: 64px;
+}
+
+.card {
+  background: var(--black-3);
+  padding: 48px 36px;
+  position: relative; overflow: hidden;
+  transition: all 0.3s;
+  cursor: default;
+}
+.card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  transform: scaleX(0); transition: transform 0.4s;
+}
+.card:hover::before { transform: scaleX(1); }
+.card:hover { background: var(--black-4); transform: translateY(-4px); }
+
+.num {
+  position: absolute; top: 32px; right: 32px;
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem; font-weight: 900;
+  color: rgba(201,151,58,0.06); line-height: 1;
+  pointer-events: none;
+}
+
+.icon {
+  width: 52px; height: 52px;
+  background: rgba(201,151,58,0.1);
+  border: 1px solid rgba(201,151,58,0.25);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 28px;
+  font-size: 1.5rem;
+}
+
+.name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.25rem; font-weight: 700; letter-spacing: 0.05em;
+  text-transform: uppercase; color: var(--white);
+  margin-bottom: 12px;
+}
+
+.desc {
+  font-size: 0.88rem; line-height: 1.7;
+  color: var(--text-muted);
+}

@@ -1,0 +1,88 @@
+.hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 120px 5% 80px;
+  position: relative; overflow: hidden;
+}
+
+.bg {
+  position: absolute; inset: 0; z-index: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 40%, rgba(201,151,58,0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 80% at 20% 80%, rgba(176,184,193,0.04) 0%, transparent 60%);
+}
+
+.grid {
+  position: absolute; inset: 0; z-index: 0; opacity: 0.04;
+  background-image:
+    linear-gradient(rgba(201,151,58,0.8) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,151,58,0.8) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.content {
+  position: relative; z-index: 1; max-width: 760px;
+}
+
+.tag {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--gold);
+  margin-bottom: 28px;
+  animation: fadeUp 0.8s ease both;
+}
+.tag::before {
+  content: ''; display: block; width: 32px; height: 1px; background: var(--gold);
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 900; line-height: 1.0;
+  color: var(--white);
+  margin-bottom: 24px;
+  animation: fadeUp 0.8s 0.15s ease both;
+}
+.gold { color: var(--gold); }
+.line2 {
+  display: block;
+  -webkit-text-stroke: 1px rgba(201,151,58,0.5);
+  color: transparent;
+}
+
+.sub {
+  font-size: 1.05rem; font-weight: 300; line-height: 1.7;
+  color: var(--silver); max-width: 480px;
+  margin-bottom: 48px;
+  animation: fadeUp 0.8s 0.3s ease both;
+}
+
+.actions {
+  display: flex; gap: 16px; flex-wrap: wrap;
+  animation: fadeUp 0.8s 0.45s ease both;
+}
+
+.stats {
+  position: relative; z-index: 1;
+  display: flex; gap: 48px; flex-wrap: wrap;
+  margin-top: 80px;
+  padding-top: 48px;
+  border-top: 1px solid rgba(201,151,58,0.15);
+  animation: fadeUp 0.8s 0.6s ease both;
+}
+
+.statNum {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem; font-weight: 700; color: var(--gold);
+  line-height: 1;
+}
+.statLabel {
+  font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--silver);
+  margin-top: 4px;
+}
+
+@media (max-width: 600px) {
+  .stats { gap: 28px; }
+}

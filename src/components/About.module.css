@@ -1,0 +1,68 @@
+.about { background: var(--black-2); }
+
+.grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: center; margin-top: 64px;
+}
+
+.visual { position: relative; }
+
+.mainBox {
+  aspect-ratio: 4 / 5;
+  background: var(--black-3);
+  border: 1px solid rgba(201,151,58,0.15);
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.mainBox::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at center, rgba(201,151,58,0.08), transparent 70%);
+}
+
+.badge {
+  position: absolute; bottom: -20px; right: -20px;
+  background: var(--gold); color: var(--black);
+  padding: 24px 28px;
+}
+.badgeNum {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem; font-weight: 900; line-height: 1;
+  display: block;
+}
+.badgeText {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  white-space: pre-line;
+}
+
+.text { padding: 20px 0; }
+
+.points {
+  margin-top: 40px; display: flex; flex-direction: column; gap: 20px;
+}
+
+.point { display: flex; gap: 16px; align-items: flex-start; }
+
+.pointIcon {
+  width: 36px; height: 36px; flex-shrink: 0;
+  background: rgba(201,151,58,0.1);
+  border: 1px solid rgba(201,151,58,0.25);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.9rem; margin-top: 2px;
+}
+
+.pointTitle {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.95rem; font-weight: 700; letter-spacing: 0.05em;
+  text-transform: uppercase; color: var(--white);
+}
+
+.pointDesc {
+  font-size: 0.85rem; line-height: 1.6; color: var(--text-muted); margin-top: 3px;
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; gap: 40px; }
+}

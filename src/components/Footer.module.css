@@ -1,0 +1,67 @@
+.footer {
+  background: var(--black-2);
+  border-top: 1px solid rgba(201,151,58,0.15);
+  padding: 64px 5% 32px;
+}
+
+.top {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+.brandName {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem; font-weight: 900; color: var(--white);
+  margin-bottom: 4px;
+}
+.brandName span { color: var(--gold); }
+
+.brandSub {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.brandDesc {
+  font-size: 0.85rem; line-height: 1.7;
+  color: var(--text-muted); max-width: 260px;
+}
+
+.colTitle {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--gold);
+  margin-bottom: 20px;
+}
+
+.colLinks {
+  list-style: none;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.colLinks a {
+  font-size: 0.85rem; color: var(--text-muted);
+  text-decoration: none; transition: color 0.2s;
+}
+.colLinks a:hover { color: var(--gold-light); }
+
+.bottom {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding-top: 28px;
+  display: flex; justify-content: space-between;
+  align-items: center; flex-wrap: wrap; gap: 12px;
+}
+
+.copy {
+  font-size: 0.8rem; color: var(--text-muted);
+}
+.copy span { color: var(--gold); }
+
+@media (max-width: 900px) {
+  .top { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .top { grid-template-columns: 1fr; }
+}
