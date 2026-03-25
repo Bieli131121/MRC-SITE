@@ -22,11 +22,7 @@ export default function Navbar() {
     <>
       <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
         <a className={styles.logo} href="#home">
-          <svg className={styles.logoIcon} viewBox="0 0 40 40" fill="none">
-            <polyline points="4,28 12,14 20,20 28,14 36,28" stroke="#C9973A" strokeWidth="2.5" fill="none" strokeLinejoin="round"/>
-            <rect x="10" y="14" width="4" height="14" stroke="#C9973A" strokeWidth="1.5" fill="none"/>
-          </svg>
-          <span className={styles.logoText}>MRC <span>Construção</span></span>
+          <img src="/logo.jpg" alt="MRC Logo" className={styles.logoImg} />
         </a>
 
         <ul className={styles.links}>
