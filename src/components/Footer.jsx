@@ -1,61 +1,76 @@
-import { SERVICES } from '../data/constants'
-import styles from './Footer.module.css'
-
-const COMPANY_LINKS = ['Sobre nós', 'Processo', 'Depoimentos', 'Blog']
-const SOCIAL_LINKS  = ['WhatsApp', 'E-mail', 'Instagram', 'Facebook']
+const navLinks = [
+  { href: '#servicos', label: 'Serviços' },
+  { href: '#sobre', label: 'Sobre' },
+  { href: '#processo', label: 'Processo' },
+  { href: '#depoimentos', label: 'Depoimentos' },
+  { href: '#contato', label: 'Contato' },
+]
 
 export default function Footer() {
-  const year = new Date().getFullYear()
-
   return (
-    <footer className={styles.footer}>
-      <div className={styles.top}>
-        {/* Brand */}
-        <div>
-          <div className={styles.brandName}>MR<span>C</span></div>
-          <div className={styles.brandSub}>Reforma e Construção</div>
-          <p className={styles.brandDesc}>
-            Construindo com qualidade, entregando com confiança há mais de 12 anos.
-          </p>
+    <footer style={{ background: 'var(--bg-alt)', borderTop: '1px solid var(--border)', padding: 'clamp(3rem, 6vw, 4rem) 0 2.5rem' }}>
+      <div className="container">
+        <div className="footer-grid">
+          <div>
+            <div style={{ marginBottom: '1rem' }}>
+              <div style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', fontWeight: 900, color: 'var(--cream)', lineHeight: 1 }}>MRC</div>
+              <div style={{ fontFamily: 'var(--font-cond)', fontSize: '0.62rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', marginTop: '2px' }}>Reforma &amp; Construção</div>
+            </div>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.88rem', fontWeight: 300, lineHeight: 1.75, maxWidth: '280px' }}>
+              Obras residenciais e comerciais executadas com excelência técnica, prazo e transparência em Blumenau e região.
+            </p>
+          </div>
+          <div>
+            <div style={{ fontFamily: 'var(--font-cond)', fontSize: '0.65rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '1.2rem' }}>Navegação</div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.7rem' }}>
+              {navLinks.map(l => (
+                <a key={l.href} href={l.href} style={{ color: 'var(--text-muted)', fontSize: '0.88rem', fontWeight: 300, transition: 'color 0.2s' }}
+                  onMouseEnter={e => e.target.style.color = 'var(--cream)'}
+                  onMouseLeave={e => e.target.style.color = 'var(--text-muted)'}
+                >{l.label}</a>
+              ))}
+            </div>
+          </div>
+          <div>
+            <div style={{ fontFamily: 'var(--font-cond)', fontSize: '0.65rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '1.2rem' }}>Contato</div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.7rem' }}>
+              {['Blumenau, SC', '(48) 99979-9447', 'contato@mrcreforma.com.br', 'Seg–Sex: 8h às 18h'].map((line, i) => (
+                <div key={i} style={{ color: 'var(--text-muted)', fontSize: '0.88rem', fontWeight: 300 }}>{line}</div>
+              ))}
+            </div>
+          </div>
         </div>
 
-        {/* Serviços */}
-        <div>
-          <div className={styles.colTitle}>Serviços</div>
-          <ul className={styles.colLinks}>
-            {SERVICES.map(s => (
-              <li key={s.name}><a href="#serviços">{s.name}</a></li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Empresa */}
-        <div>
-          <div className={styles.colTitle}>Empresa</div>
-          <ul className={styles.colLinks}>
-            {COMPANY_LINKS.map(item => (
-              <li key={item}><a href="#">{item}</a></li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Contato */}
-        <div>
-          <div className={styles.colTitle}>Contato</div>
-          <ul className={styles.colLinks}>
-            {SOCIAL_LINKS.map(item => (
-              <li key={item}><a href="#">{item}</a></li>
-            ))}
-          </ul>
+        <div style={{ borderTop: '1px solid var(--border-soft)', paddingTop: '2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem' }}>
+          <div style={{ fontFamily: 'var(--font-cond)', fontSize: '0.65rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-muted)' }}>
+            © {new Date().getFullYear()} MRC Reforma e Construção · Todos os direitos reservados
+          </div>
+          <div style={{ fontFamily: 'var(--font-cond)', fontSize: '0.65rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-muted)' }}>
+            CNPJ 00.000.000/0001-00
+          </div>
         </div>
       </div>
 
-      <div className={styles.bottom}>
-        <span className={styles.copy}>
-          © {year} <span>MRC Reforma e Construção</span>. Todos os direitos reservados.
-        </span>
-        <span className={styles.copy}>CNPJ: 00.000.000/0001-00</span>
-      </div>
+      <style>{`
+        .footer-grid {
+          display: grid;
+          grid-template-columns: 1.5fr 1fr 1fr;
+          gap: 4rem;
+          margin-bottom: 3.5rem;
+        }
+        @media (max-width: 768px) {
+          .footer-grid {
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+          }
+          .footer-grid > div:first-child {
+            grid-column: 1 / -1;
+          }
+        }
+        @media (max-width: 440px) {
+          .footer-grid { grid-template-columns: 1fr; }
+        }
+      `}</style>
     </footer>
   )
 }

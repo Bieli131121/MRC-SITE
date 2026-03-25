@@ -1,53 +1,118 @@
-import styles from './About.module.css'
-
-const POINTS = [
-  { icon: '🏅', title: 'Equipe Certificada', desc: 'Todos os nossos profissionais são qualificados e seguem rigorosos padrões de segurança e qualidade.' },
-  { icon: '📋', title: 'Obras com Garantia', desc: 'Emitimos garantia técnica em todas as nossas obras, assegurando sua tranquilidade após a entrega.' },
-  { icon: '💬', title: 'Atendimento Personalizado', desc: 'Cada cliente recebe atenção exclusiva do início ao fim, com comunicação transparente em todas as etapas.' },
+const values = [
+  { title: 'Transparência', desc: 'Orçamento detalhado e sem surpresas. Você sabe exatamente onde cada real está sendo investido.' },
+  { title: 'Prazo', desc: 'Cumprimos o combinado. Nossa reputação foi construída entregando obras no prazo acordado.' },
+  { title: 'Qualidade', desc: 'Materiais selecionados e mão de obra especializada. Cada detalhe importa para a durabilidade da obra.' },
 ]
 
 export default function About() {
   return (
-    <section className={`section ${styles.about}`} id="sobre">
-      <div className={styles.grid}>
-        <div className={styles.visual}>
-          <div className={styles.mainBox}>
-            <svg width="160" height="140" viewBox="0 0 160 140" fill="none" style={{ opacity: 0.6 }}>
-              <polyline points="10,120 30,50 60,75 100,40 130,60 150,120" stroke="#C9973A" strokeWidth="3" fill="none" strokeLinejoin="round"/>
-              <rect x="28" y="50" width="12" height="70" stroke="#C9973A" strokeWidth="2" fill="none"/>
-              <line x1="10" y1="120" x2="150" y2="120" stroke="#C9973A" strokeWidth="2"/>
-            </svg>
-            <div className={styles.badge}>
-              <span className={styles.badgeNum}>12+</span>
-              <span className={styles.badgeText}>Anos de{'\n'}Mercado</span>
-            </div>
-          </div>
-        </div>
+    <section id="sobre" style={{ padding: 'clamp(4rem, 8vw, 7rem) 0', background: 'var(--bg)' }}>
+      <div className="container">
+        <div className="about-grid">
 
-        <div className={styles.text}>
-          <div className="section-label">Quem somos</div>
-          <h2 className="section-title">
-            Tradição e <span className="gold">excelência</span> em cada obra
-          </h2>
-          <p className="section-desc">
-            Há mais de uma década no mercado, a MRC Reforma e Construção é sinônimo de
-            confiança, qualidade e compromisso. Nossa equipe de profissionais qualificados
-            transforma projetos em realidade com atenção a cada detalhe.
-          </p>
-
-          <div className={styles.points}>
-            {POINTS.map(p => (
-              <div className={styles.point} key={p.title}>
-                <div className={styles.pointIcon}>{p.icon}</div>
+          {/* Left: visual block */}
+          <div className="about-visual">
+            <div style={{
+              background: 'var(--bg-card)', border: '1px solid var(--border)',
+              borderRadius: '2px', padding: 'clamp(2rem, 4vw, 3.5rem)',
+              position: 'relative',
+            }}>
+              <div style={{ position: 'absolute', top: 0, left: 'clamp(2rem, 4vw, 3.5rem)', width: '60px', height: '3px', background: 'var(--gold)' }} />
+              <blockquote style={{
+                fontFamily: 'var(--font-display)', fontSize: 'clamp(1.1rem, 2.2vw, 1.7rem)',
+                fontStyle: 'italic', fontWeight: 700, color: 'var(--cream)',
+                lineHeight: 1.45, marginBottom: '2rem',
+              }}>
+                "Tratamos cada obra como se fosse a nossa própria casa."
+              </blockquote>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                <div style={{
+                  width: '44px', height: '44px', borderRadius: '50%', flexShrink: 0,
+                  background: 'linear-gradient(135deg, var(--gold-dim), var(--gold))',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '1rem', color: '#0d0c0a',
+                }}>M</div>
                 <div>
-                  <div className={styles.pointTitle}>{p.title}</div>
-                  <div className={styles.pointDesc}>{p.desc}</div>
+                  <div style={{ fontFamily: 'var(--font-body)', fontWeight: 600, color: 'var(--cream)', fontSize: '0.9rem' }}>Marcos Roberto Costa</div>
+                  <div style={{ fontFamily: 'var(--font-cond)', fontSize: '0.65rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text-muted)' }}>Fundador &amp; Responsável Técnico</div>
                 </div>
               </div>
-            ))}
+            </div>
+
+            {/* Stat card — inline on mobile, floating on desktop */}
+            <div className="about-stat-card">
+              <div style={{ fontFamily: 'var(--font-display)', fontSize: '2.8rem', fontWeight: 900, color: '#0d0c0a', lineHeight: 1 }}>12+</div>
+              <div style={{ fontFamily: 'var(--font-cond)', fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(0,0,0,0.6)', marginTop: '0.3rem' }}>Anos<br />de Experiência</div>
+            </div>
           </div>
+
+          {/* Right: content */}
+          <div>
+            <div className="tag" style={{ marginBottom: '1.2rem' }}>Nossa história</div>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.6rem, 3vw, 2.8rem)', fontWeight: 700, color: 'var(--cream)', lineHeight: 1.2, marginBottom: '1.5rem' }}>
+              Construímos com<br />propósito e cuidado
+            </h2>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.97rem', fontWeight: 300, lineHeight: 1.8, marginBottom: '1rem' }}>
+              A MRC nasceu da convicção de que uma reforma bem-feita transforma não só o imóvel, mas a vida de quem mora nele. Com mais de 12 anos de experiência em Blumenau e região, construímos nossa reputação obra a obra.
+            </p>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.97rem', fontWeight: 300, lineHeight: 1.8, marginBottom: '2.5rem' }}>
+              Nossa equipe é formada por profissionais capacitados e comprometidos com o que mais importa: a sua satisfação.
+            </p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+              {values.map((v, i) => (
+                <div key={i} style={{ display: 'flex', gap: '1.2rem', alignItems: 'flex-start' }}>
+                  <div style={{ width: '32px', height: '32px', flexShrink: 0, border: '1px solid var(--gold-dim)', borderRadius: '2px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--gold)' }} />
+                  </div>
+                  <div>
+                    <div style={{ fontFamily: 'var(--font-body)', fontWeight: 600, color: 'var(--cream)', fontSize: '0.95rem', marginBottom: '0.25rem' }}>{v.title}</div>
+                    <div style={{ color: 'var(--text-muted)', fontSize: '0.88rem', fontWeight: 300, lineHeight: 1.65 }}>{v.desc}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </div>
+
+      <style>{`
+        .about-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 6rem;
+          align-items: start;
+        }
+        .about-visual {
+          position: relative;
+          padding-bottom: 4rem;
+        }
+        .about-stat-card {
+          position: absolute;
+          bottom: 0;
+          right: -2rem;
+          background: var(--gold);
+          padding: 1.8rem 2rem;
+          border-radius: 2px;
+          box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+        @media (max-width: 900px) {
+          .about-grid {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+          }
+          .about-visual {
+            padding-bottom: 0;
+          }
+          .about-stat-card {
+            position: static;
+            display: inline-block;
+            margin-top: 1.5rem;
+            right: auto;
+            bottom: auto;
+          }
+        }
+      `}</style>
     </section>
   )
 }
