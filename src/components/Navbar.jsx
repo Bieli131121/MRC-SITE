@@ -8,8 +8,8 @@ const links = [
 ]
 
 export default function Navbar() {
-  const [scrolled,     setScrolled]     = useState(false)
-  const [menuOpen,     setMenuOpen]     = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60)
@@ -29,8 +29,15 @@ export default function Navbar() {
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
         height: '72px',
       }}>
-        {/* Logo */}
-        <a href="#" style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+
+        {/* Logo — FIX: text-decoration none + alinhamento correto */}
+        <a href="#" style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '2px',
+          textDecoration: 'none',
+          lineHeight: 1,
+        }}>
           <span style={{
             fontFamily: 'var(--font-display)',
             fontSize: '1.45rem',
@@ -38,6 +45,7 @@ export default function Navbar() {
             color: 'var(--cream)',
             letterSpacing: '0.04em',
             lineHeight: 1,
+            display: 'block',
           }}>MRC</span>
           <span style={{
             fontFamily: 'var(--font-cond)',
@@ -46,6 +54,8 @@ export default function Navbar() {
             letterSpacing: '0.22em',
             textTransform: 'uppercase',
             color: 'var(--gold)',
+            display: 'block',
+            lineHeight: 1,
           }}>Reforma &amp; Construção</span>
         </a>
 
@@ -60,38 +70,50 @@ export default function Navbar() {
               textTransform: 'uppercase',
               color: 'var(--text-muted)',
               transition: 'color 0.2s',
+              textDecoration: 'none',
             }}
             onMouseEnter={e => e.target.style.color = 'var(--gold)'}
             onMouseLeave={e => e.target.style.color = 'var(--text-muted)'}
             >{l.label}</a>
           ))}
-          <a href="https://wa.me/5548999799447" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ padding: '0.65rem 1.4rem', fontSize: '0.72rem' }}>
+          <a href="https://wa.me/5548999799447" target="_blank" rel="noopener noreferrer"
+            className="btn-primary"
+            style={{ padding: '0.65rem 1.4rem', fontSize: '0.72rem' }}
+          >
             Orçamento Grátis
           </a>
         </nav>
 
-        {/* Hamburger */}
+        {/* Hamburger — FIX: transform correto para cada barra */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          style={{
-            display: 'none', background: 'none', border: 'none', cursor: 'pointer',
-            flexDirection: 'column', gap: '5px', padding: '4px',
-          }}
           className="hamburger"
           aria-label="Menu"
+          style={{
+            background: 'none', border: 'none', cursor: 'pointer',
+            padding: '4px', display: 'none',
+            flexDirection: 'column', gap: '5px',
+          }}
         >
-          {[0,1,2].map(i => (
-            <span key={i} style={{
-              display: 'block', width: '24px', height: '2px',
-              background: 'var(--text)',
-              transition: 'all 0.3s ease',
-              transform: menuOpen
-                ? i === 0 ? 'rotate(45deg) translate(5px, 5px)'
-                : i === 1 ? 'opacity:0' : 'rotate(-45deg) translate(5px,-5px)'
-                : 'none',
-              opacity: menuOpen && i === 1 ? 0 : 1,
-            }} />
-          ))}
+          <span style={{
+            display: 'block', width: '24px', height: '2px',
+            background: 'var(--text)',
+            transition: 'all 0.3s ease',
+            transform: menuOpen ? 'rotate(45deg) translate(5px, 5px)' : 'none',
+          }} />
+          <span style={{
+            display: 'block', width: '24px', height: '2px',
+            background: 'var(--text)',
+            transition: 'all 0.3s ease',
+            opacity: menuOpen ? 0 : 1,         // FIX: opacity separado do transform
+            transform: 'none',
+          }} />
+          <span style={{
+            display: 'block', width: '24px', height: '2px',
+            background: 'var(--text)',
+            transition: 'all 0.3s ease',
+            transform: menuOpen ? 'rotate(-45deg) translate(5px, -5px)' : 'none',
+          }} />
         </button>
       </div>
 
@@ -115,12 +137,13 @@ export default function Navbar() {
                 color: 'var(--text)',
                 padding: '0.9rem 0',
                 borderBottom: '1px solid var(--border-soft)',
+                textDecoration: 'none',
               }}
             >{l.label}</a>
           ))}
           <a href="https://wa.me/5548999799447" target="_blank" rel="noopener noreferrer"
             className="btn-primary"
-            style={{ marginTop: '1.5rem', width: '100%', justifyContent: 'center' }}
+            style={{ marginTop: '1.5rem', width: '100%', justifyContent: 'center', display: 'flex' }}
           >Orçamento Grátis</a>
         </div>
       )}
