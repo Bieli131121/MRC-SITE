@@ -1,8 +1,8 @@
 const reviews = [
-  { name: 'Ana Paula Schroeder', role: 'Reforma de apartamento · Blumenau', text: 'A MRC reformou nossa cozinha e banheiro em tempo recorde. O Marcos foi pontual, transparente e a equipe deixou tudo impecável. Com certeza vou chamar para a próxima reforma.', stars: 5 },
-  { name: 'Carlos Henrique Lima', role: 'Obra comercial · Gaspar', text: 'Contratamos para reformar nossa loja sem fechar durante as obras. O planejamento foi preciso, respeitaram os horários combinados e o resultado superou as expectativas.', stars: 5 },
-  { name: 'Fernanda Büchele', role: 'Construção de casa · Indaial', text: 'Do projeto à entrega, a comunicação foi excelente. Recebi fotos e vídeos do andamento toda semana. Entregaram no prazo e dentro do orçamento. Recomendo sem hesitar.', stars: 5 },
-  { name: 'Ricardo Waltrik', role: 'Reforma de sala e quarto · Blumenau', text: 'Equipe super organizada, materiais de qualidade e acabamento perfeito. O preço foi justo e o atendimento foi diferenciado do início ao fim. 10 de 10.', stars: 5 },
+  { name: 'Ana Paula Schroeder', role: 'Reforma de apartamento · Garopaba', text: 'A MRC reformou nossa cozinha e banheiro em tempo recorde. O Marcos foi pontual, transparente e a equipe deixou tudo impecável. Com certeza vou chamar para a próxima reforma.', stars: 5 },
+  { name: 'Carlos Henrique Lima', role: 'Obra comercial · Garopaba', text: 'Contratamos para reformar nossa loja sem fechar durante as obras. O planejamento foi preciso, respeitaram os horários combinados e o resultado superou as expectativas.', stars: 5 },
+  { name: 'Fernanda Büchele', role: 'Reforma completa · Garopaba', text: 'Do projeto à entrega, a comunicação foi excelente. Recebi fotos e vídeos do andamento toda semana. Entregaram no prazo e dentro do orçamento. Recomendo sem hesitar.', stars: 5 },
+  { name: 'Ricardo Waltrik', role: 'Reforma de sala e quarto · Garopaba', text: 'Equipe super organizada, materiais de qualidade e acabamento perfeito. O preço foi justo e o atendimento foi diferenciado do início ao fim. 10 de 10.', stars: 5 },
 ]
 
 function Stars({ count }) {
