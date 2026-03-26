@@ -33,7 +33,7 @@ export default function About() {
                   fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: '1rem', color: '#0d0c0a',
                 }}>M</div>
                 <div>
-                  <div style={{ fontFamily: 'var(--font-body)', fontWeight: 600, color: 'var(--cream)', fontSize: '0.9rem' }}>Marcos Roberto Costa</div>
+                  <div style={{ fontFamily: 'var(--font-body)', fontWeight: 600, color: 'var(--cream)', fontSize: '0.9rem' }}>Marcos Butke</div>
                   <div style={{ fontFamily: 'var(--font-cond)', fontSize: '0.65rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text-muted)' }}>Fundador &amp; Responsável Técnico</div>
                 </div>
               </div>
