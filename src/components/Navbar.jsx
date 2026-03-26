@@ -30,33 +30,18 @@ export default function Navbar() {
         height: '72px',
       }}>
 
-        {/* Logo — FIX: text-decoration none + alinhamento correto */}
-        <a href="#" style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '2px',
-          textDecoration: 'none',
-          lineHeight: 1,
-        }}>
-          <span style={{
-            fontFamily: 'var(--font-display)',
-            fontSize: '1.45rem',
-            fontWeight: 900,
-            color: 'var(--cream)',
-            letterSpacing: '0.04em',
-            lineHeight: 1,
-            display: 'block',
-          }}>MRC</span>
-          <span style={{
-            fontFamily: 'var(--font-cond)',
-            fontSize: '0.6rem',
-            fontWeight: 600,
-            letterSpacing: '0.22em',
-            textTransform: 'uppercase',
-            color: 'var(--gold)',
-            display: 'block',
-            lineHeight: 1,
-          }}>Reforma &amp; Construção</span>
+        {/* Logo */}
+        <a href="#" style={{ display: 'flex', alignItems: 'center' }}>
+          <img
+            src="/logo.jpg"
+            alt="MRC Reforma e Construção"
+            style={{
+              height: '52px',
+              width: 'auto',
+              objectFit: 'contain',
+              borderRadius: '4px',
+            }}
+          />
         </a>
 
         {/* Desktop nav */}
@@ -70,7 +55,6 @@ export default function Navbar() {
               textTransform: 'uppercase',
               color: 'var(--text-muted)',
               transition: 'color 0.2s',
-              textDecoration: 'none',
             }}
             onMouseEnter={e => e.target.style.color = 'var(--gold)'}
             onMouseLeave={e => e.target.style.color = 'var(--text-muted)'}
@@ -84,36 +68,19 @@ export default function Navbar() {
           </a>
         </nav>
 
-        {/* Hamburger — FIX: transform correto para cada barra */}
+        {/* Hamburger */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="hamburger"
-          aria-label="Menu"
           style={{
-            background: 'none', border: 'none', cursor: 'pointer',
-            padding: '4px', display: 'none',
-            flexDirection: 'column', gap: '5px',
+            display: 'none', background: 'none', border: 'none', cursor: 'pointer',
+            flexDirection: 'column', gap: '5px', padding: '4px',
           }}
+          aria-label="Menu"
         >
-          <span style={{
-            display: 'block', width: '24px', height: '2px',
-            background: 'var(--text)',
-            transition: 'all 0.3s ease',
-            transform: menuOpen ? 'rotate(45deg) translate(5px, 5px)' : 'none',
-          }} />
-          <span style={{
-            display: 'block', width: '24px', height: '2px',
-            background: 'var(--text)',
-            transition: 'all 0.3s ease',
-            opacity: menuOpen ? 0 : 1,         // FIX: opacity separado do transform
-            transform: 'none',
-          }} />
-          <span style={{
-            display: 'block', width: '24px', height: '2px',
-            background: 'var(--text)',
-            transition: 'all 0.3s ease',
-            transform: menuOpen ? 'rotate(-45deg) translate(5px, -5px)' : 'none',
-          }} />
+          <span style={{ display: 'block', width: '24px', height: '2px', background: 'var(--text)', transition: 'all 0.3s ease', transform: menuOpen ? 'rotate(45deg) translate(5px, 5px)' : 'none' }} />
+          <span style={{ display: 'block', width: '24px', height: '2px', background: 'var(--text)', transition: 'all 0.3s ease', opacity: menuOpen ? 0 : 1 }} />
+          <span style={{ display: 'block', width: '24px', height: '2px', background: 'var(--text)', transition: 'all 0.3s ease', transform: menuOpen ? 'rotate(-45deg) translate(5px, -5px)' : 'none' }} />
         </button>
       </div>
 
@@ -137,13 +104,12 @@ export default function Navbar() {
                 color: 'var(--text)',
                 padding: '0.9rem 0',
                 borderBottom: '1px solid var(--border-soft)',
-                textDecoration: 'none',
               }}
             >{l.label}</a>
           ))}
           <a href="https://wa.me/5548999799447" target="_blank" rel="noopener noreferrer"
             className="btn-primary"
-            style={{ marginTop: '1.5rem', width: '100%', justifyContent: 'center', display: 'flex' }}
+            style={{ marginTop: '1.5rem', width: '100%', justifyContent: 'center' }}
           >Orçamento Grátis</a>
         </div>
       )}
