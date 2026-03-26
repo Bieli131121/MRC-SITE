@@ -45,13 +45,13 @@ export default function Footer() {
           <div style={{ fontFamily: 'var(--font-cond)', fontSize: '0.65rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-muted)' }}>
             © {new Date().getFullYear()} MRC Reforma e Construção · Todos os direitos reservados &nbsp;·&nbsp; CNPJ 61.519.356/0001-20
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+          <a href="https://tecchti.vercel.app/" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
             <span style={{ fontFamily: 'var(--font-cond)', fontSize: '0.62rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-muted)' }}>Desenvolvido por</span>
             <img src="/TechTI.png" alt="TechTI Soluções de Informática" style={{ height: '32px', width: 'auto', objectFit: 'contain', opacity: 0.75, filter: 'grayscale(1) invert(1)', borderRadius: '4px', transition: 'opacity 0.2s' }}
               onMouseEnter={e => e.target.style.opacity = 1}
               onMouseLeave={e => e.target.style.opacity = 0.75}
             />
-          </div>
+          </a>
         </div>
       </div>
 
