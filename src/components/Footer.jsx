@@ -17,7 +17,7 @@ export default function Footer() {
               <div style={{ fontFamily: 'var(--font-cond)', fontSize: '0.62rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', marginTop: '2px' }}>Reforma &amp; Construção</div>
             </div>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.88rem', fontWeight: 300, lineHeight: 1.75, maxWidth: '280px' }}>
-              Obras residenciais e comerciais executadas com excelência técnica, prazo e transparência em Blumenau e região.
+              Obras residenciais e comerciais executadas com excelência técnica, prazo e transparência em Garopaba e região.
             </p>
           </div>
           <div>
@@ -34,7 +34,7 @@ export default function Footer() {
           <div>
             <div style={{ fontFamily: 'var(--font-cond)', fontSize: '0.65rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '1.2rem' }}>Contato</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.7rem' }}>
-              {['Blumenau, SC', '(48) 99979-9447', 'contato@mrcreforma.com.br', 'Seg–Sex: 8h às 18h'].map((line, i) => (
+              {['Garopaba, SC', '(48) 99979-9447', 'Seg–Sex: 8h às 18h'].map((line, i) => (
                 <div key={i} style={{ color: 'var(--text-muted)', fontSize: '0.88rem', fontWeight: 300 }}>{line}</div>
               ))}
             </div>
@@ -46,7 +46,7 @@ export default function Footer() {
             © {new Date().getFullYear()} MRC Reforma e Construção · Todos os direitos reservados
           </div>
           <div style={{ fontFamily: 'var(--font-cond)', fontSize: '0.65rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-muted)' }}>
-            CNPJ 00.000.000/0001-00
+            CNPJ 61.519.356/0001-20
           </div>
         </div>
       </div>

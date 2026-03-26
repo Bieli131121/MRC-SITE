@@ -53,7 +53,7 @@ export default function About() {
               Construímos com<br />propósito e cuidado
             </h2>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.97rem', fontWeight: 300, lineHeight: 1.8, marginBottom: '1rem' }}>
-              A MRC nasceu da convicção de que uma reforma bem-feita transforma não só o imóvel, mas a vida de quem mora nele. Com mais de 12 anos de experiência em Blumenau e região, construímos nossa reputação obra a obra.
+              A MRC nasceu da convicção de que uma reforma bem-feita transforma não só o imóvel, mas a vida de quem mora nele. Com mais de 12 anos de experiência em Garopaba e região, construímos nossa reputação obra a obra.
             </p>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.97rem', fontWeight: 300, lineHeight: 1.8, marginBottom: '2.5rem' }}>
               Nossa equipe é formada por profissionais capacitados e comprometidos com o que mais importa: a sua satisfação.

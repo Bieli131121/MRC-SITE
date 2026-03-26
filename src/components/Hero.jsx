@@ -30,7 +30,7 @@ export default function Hero() {
       <div className="container" style={{ position: 'relative', zIndex: 2, paddingTop: '6rem', paddingBottom: '4rem' }}>
         <div style={{ maxWidth: '700px' }}>
           <div className="tag fade-up fade-up-1" style={{ marginBottom: '1.5rem' }}>
-            Reforma &amp; Construção · Blumenau, SC
+            Reforma &amp; Construção · Garopaba, SC
           </div>
           <h1 className="fade-up fade-up-2" style={{
             fontFamily: 'var(--font-display)', fontSize: 'clamp(2.2rem, 6vw, 5.2rem)',
